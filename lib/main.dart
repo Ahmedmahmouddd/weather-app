@@ -16,7 +16,6 @@ class WeatherApp extends StatefulWidget {
 
 class _WeatherAppState extends State<WeatherApp> {
   @override
-
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => WeatherCubit(),
@@ -26,13 +25,8 @@ class _WeatherAppState extends State<WeatherApp> {
               return MaterialApp(
                 theme: ThemeData(
                     appBarTheme: AppBarTheme(
-                        color: getColor(BlocProvider.of<WeatherCubit>(context)
-                            .weatherModel
-                            ?.condition)),
-                    primaryColor: getColor(
-                        BlocProvider.of<WeatherCubit>(context)
-                            .weatherModel
-                            ?.condition)),
+                        color: getColor(BlocProvider.of<WeatherCubit>(context).weatherModel?.condition)),
+                    primaryColor: getColor(BlocProvider.of<WeatherCubit>(context).weatherModel?.condition)),
                 debugShowCheckedModeBanner: false,
                 home: const HomeView(),
               );
@@ -41,6 +35,13 @@ class _WeatherAppState extends State<WeatherApp> {
         ));
   }
 }
+
+// create states
+// create cubit
+// create function
+// provide cubit
+// integrate cubit
+// trigger cubit
 
 MaterialColor getColor(String? condition) {
   if (condition == null) return Colors.blue;
@@ -100,7 +101,7 @@ MaterialColor getColor(String? condition) {
     case 'Patchy light drizzle':
     case 'Light drizzle':
       return Colors.cyan;
-      
+
     case 'Clear':
       return Colors.lightBlue;
     // Colors.deepPurple
@@ -124,11 +125,3 @@ MaterialColor getColor(String? condition) {
       return Colors.blueGrey;
   }
 }
-
-
-// create states
-// create cubit
-// create function
-// provide cubit
-// integrate cubit
-// trigger cubit 

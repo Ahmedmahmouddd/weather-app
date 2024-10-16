@@ -17,9 +17,7 @@ class SearchView extends StatelessWidget {
           child: TextField(
               cursorColor: Theme.of(context).primaryColor,
               onSubmitted: (value) async {
-                WeatherCubit weatherCubit =
-                    BlocProvider.of<WeatherCubit>(context);
-                weatherCubit.getWeather(cityName: value);
+                BlocProvider.of<WeatherCubit>(context).getWeather(cityName: value);
                 Navigator.pop(context);
               },
               decoration: InputDecoration(
@@ -29,17 +27,14 @@ class SearchView extends StatelessWidget {
                   ),
                   hintText: 'Enter your city',
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Theme.of(context).primaryColor, width: 2),
+                      borderSide: BorderSide(color: Theme.of(context).primaryColor, width: 2),
                       borderRadius: BorderRadius.circular(12)),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Theme.of(context).primaryColor, width: 2),
+                    borderSide: BorderSide(color: Theme.of(context).primaryColor, width: 2),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Theme.of(context).primaryColor, width: 2),
+                    borderSide: BorderSide(color: Theme.of(context).primaryColor, width: 2),
                     borderRadius: BorderRadius.circular(12),
                   ))),
         ),

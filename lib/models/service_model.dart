@@ -30,7 +30,8 @@ class WeatherModel {
       maxTemp: json["forecast"]["forecastday"][0]["day"]["maxtemp_c"],
       minTemp: json["forecast"]["forecastday"][0]["day"]["mintemp_c"],
       humidity: json["current"]["humidity"],
-      image: json["current"]["condition"]["icon"], date: json["current"]["last_updated"],
+      image: json["current"]["condition"]["icon"],
+      date: json["current"]["last_updated"],
     );
   }
 }
